@@ -1,77 +1,59 @@
-# weather-web-app
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <title> weather app</title.
-    
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <title> Weather App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Weather web app</title>
+    <link rel="stylesheet" href="https://rawgit.com/marvelapp/devices.css/master/assets/devices.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,500,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="style.css">
-      <style>
-      body{
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        font-size: 1em;
-        text-shadow: 0 0 10px #000;
-        color: #fff;
-        background: #888;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        
-        
-    }
-        section{
-          min-height: 100%;
-        }
-
-        h1{
-          font-size: 2em;
-          padding: 0 0.3em;
-          line-height: 1em;
-        }
-
-        p{
-          padding: 0 2em;
-        }
-
-        a{
-          color: #fff;
-        }
-
-        footer{
-          position: absolute;
-          bottom: 0;
-          font-size: 0.5em;
-        }
-
-        #temperature{
-          text-decoration: none;
-          border-bottom: 0.05em dotted white;
-          
-        }
-      </style>
   </head>
+
   <body>
-    <section>
-      <h1 id="city">weather web app</h1>
-      <p><a id="temperature" href="#" onclick="switchUnits(); return false;" title="Click to switch between metric and imperial units"></a><span id="weather">by @akshitajain0208</span></p>
-    </section>
-    <footer>
-      <p>Powered by <a href="http://flickr.com/services/api/">Flickr</a> and <a href="http://openweathermap.org">Openweathermap.org</a>
-      </p></footer>
-    <script>
-      var weatherData = {
-        city: document.querySelector("#city"),
-        weather: document.querySelector("#weather"),
-        temperature: document.querySelector("#temperature"),
-        temperatureValue: 0,
-        units: "°C"
-      };
-    
-    </script>
+    <div class="marvel-device iphone-x">
+      <div class="top-bar"></div>
+    <div class="sleep"></div>
+      
+      <div class="camera"></div>
+
+     
+      <div class="screen">
+        <img src="weather.jpg" alt="the weather app">
+        <form method="get" class="form">
+          <fieldset>
+            <legend>Search by city or the coordinates</legend>
+            <ul class="list-reset">
+              <li class="form-field">
+                <label for="city">City Name</label>
+                <input type="text" id="city" placeholder="e.g. Jaipur,India">
+              </li>
+
+              <li class="form-field">
+                <label for="latitude">Latitude</label>
+                <input type="text" id="latitude" placeholder="e.g. 26.9124" required>
+              </li>
+
+              <li class="form-field">
+                <label for="longitude">Longitude</label>
+                <input type="text" id="longitude" placeholder="e.g. 75.7873" required>
+              </li>
+
+              <li class="form-field">
+                <input type="checkbox" id="celsius">
+                <label for="celsius">Temperature in Celsius</label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <button>Get Weather</button>
+        </form>
+      </div>
+   
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js'></script>
+    <script src="script.js"></script>
   </body>
 </html>
